@@ -6,7 +6,7 @@ public class Operadoreslogicos {
 
         //VARIÁVEIS
         String formadepagamento = "á vista";
-        double valor = 2000;
+        double valor = 200;
 
         //VERIFICAÇÃO
         System.out.println(formadepagamento == "á prazo" && valor >= 100);
