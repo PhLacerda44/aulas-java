@@ -16,6 +16,11 @@ public class OperadoresRelacionais {
         System.out.println(numero1 == numero2); // Igual
         System.out.println(numero1 != numero2); // Diferente
 
+        System.out.println( (numero1<10) && (numero2 <10) ); //falso
+        System.out.println( (numero1<=10) && (numero2 <10) );//verdadeiro
+        System.out.println( (numero1<10) || (numero2 <10) );//verdadeiro
+        System.out.println( (numero1<=10) || (numero2 <10) );//verdadeiro
+
     }
     
 }
