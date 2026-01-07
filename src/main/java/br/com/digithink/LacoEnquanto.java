@@ -12,6 +12,8 @@ public class LacoEnquanto {
             System.out.println(indice);
             indice++;
         }
+
+        System.out.println("Continua..");
     }
     
 }
