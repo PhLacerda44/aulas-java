@@ -9,97 +9,132 @@ public class RentCar {
 
         Scanner scanner = new Scanner(System.in);
 
-        String nomeCliente = "";
-        String nomeveiculo  = "";
-        
-        while(true){
-           
+        int indice = 0;
+
+        String[] clientes = new String[10];
+        int totalClientes = 0;
+
+        String[] veiculos = new String[10];
+        int totalVeiculos = 0;
+
+        while (true) {
+
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-            
+
             System.out.println("##########################");
             System.out.println("#     Aluguel de Carros  #");
             System.out.println("##########################");
 
-            System.out.println("Menu de Opções:");
-            System.out.println(" 1 - Cadastrar Cliente"); // Nome
-            System.out.println(" 2 - Visualizar Cliente"); 
-            System.out.println(" 3 - Cadastrar Veículo"); // Marca - Modelo
-            System.out.println(" 4 - Visualizar Veículo"); // Marca - Modelo
-            System.out.println(" 5 - Alugar Carro");
-            System.out.println(" 6 - Sair do sistema");
-        
+            System.out.println("1 - Cadastrar Cliente");
+            System.out.println("2 - Visualizar Cliente");
+            System.out.println("3 - Cadastrar Veículo");
+            System.out.println("4 - Visualizar Veículos");
+            System.out.println("5 - Alugar Carro");
+            System.out.println("6 - Concluir Aluguel");
+            System.out.println("7 - Sair do sistema");
 
-            // Obter nome
             System.out.print("Selecione uma opção: ");
             int opcao = scanner.nextInt();
             scanner.nextLine();
 
-            // Estrutura de escolha
             switch (opcao) {
+
                 case 1:
                     new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-                    System.out.println("Digite o nome do cliente:");
-                    nomeCliente = scanner.nextLine();
-                    System.out.println("Cliente cadastrado com sucesso! Pressione enter para continuar...");
-                    scanner.nextLine();
+
+                    if (totalClientes < clientes.length) {
+                        System.out.println("Digite o nome do cliente:");
+                        String nomeCliente = scanner.nextLine();
+                        clientes[totalClientes] = nomeCliente;
+                        totalClientes++;
+                        System.out.println("Cliente cadastrado com sucesso! Pressione enter para continuar...");
+                        scanner.nextLine();
+                    } else {
+                        System.out.println("Não é possível cadastrar mais clientes");
+                        scanner.nextLine();
+                    }
                     break;
 
                 case 2:
                     new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-                    System.out.println("Clientes Cadastrados");
-                    System.out.println(nomeCliente);
-                    System.out.println("pressione enter para continuar...");
+
+                    indice = 0;
+                    for (String cliente : clientes) {
+                        if (cliente != null) {
+                            System.out.println("Código: " + indice + " - Nome: " + cliente);
+                        }
+                        indice++;
+                    }
+
+                    System.out.println("Pressione enter para continuar...");
                     scanner.nextLine();
                     break;
 
                 case 3:
                     new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-                    System.out.println("Cadastre seu veículo");
-                    nomeveiculo = scanner.nextLine();
-                     System.out.println("Veículo cadastrado com sucesso! Pressione enter para continuar...");
-                    scanner.nextLine();
+
+                    if (totalVeiculos < veiculos.length) {
+                        System.out.println("Digite o nome do Veículo:");
+                        String nomeVeiculo = scanner.nextLine();
+                        veiculos[totalVeiculos] = nomeVeiculo;
+                        totalVeiculos++;
+                        System.out.println("Veículo cadastrado com sucesso!");
+                        scanner.nextLine();
+                    } else {
+                        System.out.println("Limite de veículos atingido");
+                        scanner.nextLine();
+                    }
                     break;
 
                 case 4:
                     new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-                    System.out.println("Veículos Cadastrados");
-                    System.out.println(nomeveiculo);
-                    System.out.println("pressione enter para continuar...");
+
+                    indice = 0;
+                    for (String veiculo : veiculos) {
+                        if (veiculo != null) {
+                            System.out.println("Código: " + indice + " - Nome: " + veiculo);
+                        }
+                        indice++;
+                    }
+
+                    System.out.println("Pressione enter para continuar...");
                     scanner.nextLine();
                     break;
 
-
+                // ...
                 case 5:
                     new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-                    System.out.println("Carros livres para locação:");
-                    System.out.println("Gol G3");
-                    System.out.println("Gol G3");
-                    System.out.println("Gol G3");
+
+                    String[][] aluguelClientes = {
+                        {"Pedro", "Gol G3"},
+                        {"Rafael", "Tera"},
+                        {"Roger", "Fox"}
+                    };
+
+                    for (indice = 0; indice < 3; indice++) {
+                        System.out.println("\nNome: " + aluguelClientes[indice][0]);
+                        System.out.println("Veículo: " + aluguelClientes[indice][1]);
+                    }
+
+                    System.out.println("\nPressione enter para continuar...");
                     scanner.nextLine();
                     break;
 
-                case 6:
-                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-                    System.out.println("Saindo do sistema...");
+                
 
-                    scanner.nextLine();
+                case 6:
+                    
+
+                case 7:
+                    System.out.println("Saindo do sistema...");
                     scanner.close();
                     return;
-                
+
                 default:
-                    System.out.println("opção invalída");
-                break;
-
-
+                    System.out.println("Opção inválida");
+                    scanner.nextLine();
             }
-
-
-
         }
-
-        
-
-
     }
-    
 }
+
