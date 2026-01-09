@@ -101,7 +101,7 @@ public class RentCar {
                     scanner.nextLine();
                     break;
 
-                // ...
+                
                 case 5:
                     new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
@@ -123,7 +123,14 @@ public class RentCar {
                 
 
                 case 6:
+                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+
+                   System.out.println("Digite o nome do cliente:");
+                   String nomeCliente = scanner.nextLine();
                     
+                    
+
+
 
                 case 7:
                     System.out.println("Saindo do sistema...");
