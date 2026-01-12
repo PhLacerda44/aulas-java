@@ -9,13 +9,16 @@ public class RentCar {
 
         Scanner scanner = new Scanner(System.in);
 
-        int indice = 0;
+        int linha = 0;
 
-        String[] clientes = new String[10];
+        String[] clientes = new String[5];
         int totalClientes = 0;
 
-        String[] veiculos = new String[10];
+        String[] veiculos = new String[3];
         int totalVeiculos = 0;
+
+        String[][] aluguelVeiculos = new String[3][2];      
+        int totalAlugueis = 0;
 
         while (true) {
 
@@ -30,7 +33,7 @@ public class RentCar {
             System.out.println("3 - Cadastrar Veículo");
             System.out.println("4 - Visualizar Veículos");
             System.out.println("5 - Alugar Carro");
-            System.out.println("6 - Concluir Aluguel");
+            System.out.println("6 - Listar aluguéis");
             System.out.println("7 - Sair do sistema");
 
             System.out.print("Selecione uma opção: ");
@@ -58,12 +61,12 @@ public class RentCar {
                 case 2:
                     new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
-                    indice = 0;
+                    linha = 0;
                     for (String cliente : clientes) {
                         if (cliente != null) {
-                            System.out.println("Código: " + indice + " - Nome: " + cliente);
+                            System.out.println("Código: " + linha + " - Nome: " + cliente);
                         }
-                        indice++;
+                        linha++;
                     }
 
                     System.out.println("Pressione enter para continuar...");
@@ -89,12 +92,12 @@ public class RentCar {
                 case 4:
                     new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
-                    indice = 0;
+                    linha = 0;
                     for (String veiculo : veiculos) {
                         if (veiculo != null) {
-                            System.out.println("Código: " + indice + " - Nome: " + veiculo);
+                            System.out.println("Código: " + linha + " - Nome: " + veiculo);
                         }
-                        indice++;
+                        linha++;
                     }
 
                     System.out.println("Pressione enter para continuar...");
@@ -105,22 +108,27 @@ public class RentCar {
                 case 5:
                     new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
-                    String[][] aluguelClientes = {
-                        {"Pedro", "Gol G3"},
-                        {"Rafael", "Tera"},
-                        {"Roger", "Fox"}
-                    };
+                    System.out.println("Informe o código do cliente:");
+                    int codigoCliente = scanner.nextInt();
+                    String cliente = clientes[codigoCliente];
+                    System.out.println("Cliente selecionado:" +cliente);
 
-                    for (indice = 0; indice < 3; indice++) {
-                        System.out.println("\nNome: " + aluguelClientes[indice][0]);
-                        System.out.println("Veículo: " + aluguelClientes[indice][1]);
-                    }
+                    System.out.println("Informe o código do veículo:");
+                    int codigoVeiculo = scanner.nextInt();
+                    String veiculo = veiculos[codigoVeiculo];
+                    System.out.println("Veículo selecionado:" +veiculo);
+                    scanner.nextLine();
 
+
+                    aluguelVeiculos[totalAlugueis][0] = cliente;
+                    aluguelVeiculos[totalAlugueis][1] = veiculo;
+                    totalAlugueis ++;
+
+                    
                     System.out.println("\nPressione enter para continuar...");
                     scanner.nextLine();
                     break;
 
-                
 
                 case 6:
                     new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
