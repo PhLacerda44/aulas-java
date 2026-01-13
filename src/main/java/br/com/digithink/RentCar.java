@@ -139,15 +139,13 @@ public class RentCar {
                 case 6:
                     new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
-                    System.out.println("=== LISTA DE ALUGUÉIS CADASTRADOS ===");
+                     System.out.println(" ALUGUÉIS CADASTRADOS");
 
-                     System.out.println("=== ALUGUÉIS CADASTRADOS ===");
-
-                    for (int i = 0; i < totalAlugueis; i++) {
-                        System.out.println("Cliente: " + aluguelVeiculos[i][0] +  " | Veículo: " + aluguelVeiculos[i][1]);
+                     for (int i = 0; i < totalAlugueis; i++) {
+                     System.out.println("Cliente: " + aluguelVeiculos[i][0] +  " | Veículo: " + aluguelVeiculos[i][1]);
                     }
                      System.out.println("\nPressione Enter para continuar...");
-                    scanner.nextLine();
+                     scanner.nextLine();
 
                                         
 
