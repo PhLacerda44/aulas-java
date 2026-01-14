@@ -108,28 +108,23 @@ public class RentCar {
                 case 5:
                     new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
-                    System.out.println("Informe o código do cliente:");
+                    System.out.print("Informe o código do cliente:");
                     int codigoCliente = scanner.nextInt();
                     String cliente = clientes[codigoCliente];
-                    System.out.println("Cliente selecionado:" +cliente);
+                    System.out.print("Cliente selecionado:" +cliente);
 
                     System.out.println("Informe o código do veículo:");
                     int codigoVeiculo = scanner.nextInt();
                     String veiculo = veiculos[codigoVeiculo];
-                    System.out.println("Veículo selecionado:" +veiculo);
+                    System.out.print("Veículo selecionado:" +veiculo);
                     
-                    System.out.println("Pressione enter para continuar...");
+                    System.out.print("\nPressione enter para continuar...");
                     scanner.nextLine();
 
                     aluguelVeiculos[totalAlugueis][0] = cliente;
                     aluguelVeiculos[totalAlugueis][1] = veiculo;
                     totalAlugueis ++;
-
-                      for (int indice = 0; indice < aluguelVeiculos.length; indice++) {
-                        System.out.println("\nNome: " + aluguelVeiculos[indice][0]);
-                        System.out.println("Veículo: " + aluguelVeiculos[indice][1]);
-                    }
-
+                    
                     
                     System.out.println("\nPressione enter para continuar...");
                     scanner.nextLine();
@@ -139,9 +134,9 @@ public class RentCar {
                 case 6:
                     new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
-                     System.out.println(" ALUGUÉIS CADASTRADOS");
+                    System.out.println(" ALUGUÉIS CADASTRADOS");
 
-                     for (int i = 0; i < totalAlugueis; i++) {
+                    for (int i = 0; i < totalAlugueis; i++) {
                      System.out.println("Cliente: " + aluguelVeiculos[i][0] +  " | Veículo: " + aluguelVeiculos[i][1]);
                     }
                      System.out.println("\nPressione Enter para continuar...");
