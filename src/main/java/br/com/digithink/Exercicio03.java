@@ -1,11 +1,5 @@
 package br.com.digithink;
 
-/*
-    Peça dois números inteiros.
-
-    Se forem iguais, faça a soma, caso contrário faça a multiplicação.
-*/
-
 import java.util.Scanner;
 
 public class Exercicio03 {
