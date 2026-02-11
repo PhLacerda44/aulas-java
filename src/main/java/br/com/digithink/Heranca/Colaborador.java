@@ -9,8 +9,7 @@ public class Colaborador extends Pessoa {
 
     //Construtor
     public Colaborador(String nome, int idade, String cargo, double salario){
-        this.nome = nome;
-        this.idade = idade;
+        super (nome, idade);
         this.cargo = cargo;
         this.salario = salario;
 

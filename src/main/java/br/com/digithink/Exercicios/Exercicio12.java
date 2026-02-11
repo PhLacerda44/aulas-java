@@ -1,4 +1,4 @@
-package br.com.digithink;
+package br.com.digithink.Exercicios;
 
 public class Exercicio12 {
 

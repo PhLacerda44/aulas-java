@@ -1,4 +1,4 @@
-package br.com.digithink;
+package br.com.digithink.Exercicios;
 
 /*
     Peça duas notas, exiba a média e a situação.
