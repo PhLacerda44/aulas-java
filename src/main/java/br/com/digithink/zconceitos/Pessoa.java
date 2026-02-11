@@ -1,4 +1,4 @@
-package br.com.digithink.Conceitos;
+package br.com.digithink.zconceitos;
 
 public class Pessoa {
     
