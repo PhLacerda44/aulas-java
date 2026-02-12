@@ -1,4 +1,4 @@
-package br.com.digithink;
+
 
 public class Concatenacao {
     
